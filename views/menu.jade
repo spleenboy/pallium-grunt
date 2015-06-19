@@ -1,0 +1,5 @@
+ul.pure-menu-list
+    li.pure-menu-heading Grunt
+    each task, abbr in tasks
+        li.pure-menu-item
+            a.pure-menu-link.pure-button.button-okay(href='/use/grunt/' + abbr)= task.label
