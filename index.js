@@ -1,8 +1,9 @@
 var path = require('path');
 
-var config          = plugin('config');
-var View            = plugin('views/view');
-var Controller      = plugin('controllers/controller');
+var plugins         = require(process.cwd() + '/app/services/plugins');
+var config          = plugins.require('config');
+var View            = plugins.require('views/view');
+var Controller      = plugins.require('controllers/controller');
 var GruntController = require('./controller');
 
 var id = 'grunt';

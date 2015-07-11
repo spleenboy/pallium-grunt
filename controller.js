@@ -1,10 +1,11 @@
 var util  = require('util');
 var spawn = require('child_process').spawn;
 
-var log    = plugin('services/log')(module);
-var config = plugin('config');
-var View   = plugin('views/view');
-var Parent = plugin('controllers/controller');
+var plugins = require(process.cwd() + '/app/services/plugins');
+var log    = plugins.require('services/log')(module);
+var config = plugins.require('config');
+var View   = plugins.require('views/view');
+var Parent = plugins.require('controllers/controller');
 
 function Controller() {
     Parent.call(this);
