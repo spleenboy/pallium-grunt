@@ -24,9 +24,9 @@ Controller.prototype.exec = function() {
     }
 
     var io   = this.app.io;
-    var cast = io.broadcast.bind(io, 'flash');
-    var done = io.broadcast.bind(io, 'flash', task.done);
-    var err  = io.broadcast.bind(io, 'flash', task.error);
+    var cast = io.emit.bind(io, 'flash');
+    var done = io.emit.bind(io, 'flash', task.done);
+    var err  = io.emit.bind(io, 'flash', task.error);
 
     var grunt = spawn('grunt', task.args, task.options);
 
